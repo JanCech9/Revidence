@@ -1,0 +1,227 @@
+:root {
+  --ink: #1d2430;
+  --ink-soft: #5b6675;
+  --paper: #fbfaf8;
+  --line: #e3ded6;
+  --accent: #8a5a2b;
+  --accent-soft: #f3ece2;
+  --danger: #b3422e;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+/* ── Layout ─────────────────────────────────────────────────────── */
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+  min-height: 100vh;
+}
+
+/* ── Header ─────────────────────────────────────────────────────── */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.header h1 {
+  margin: 0;
+  font-size: 26px;
+  letter-spacing: -0.01em;
+}
+.subtitle {
+  margin: 4px 0 0;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────── */
+.btn {
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  padding: 9px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.btn.primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn.primary:hover { background: #74481f; }
+.btn.primary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.btn.ghost {
+  background: transparent;
+  color: var(--accent);
+}
+
+/* ── Search ──────────────────────────────────────────────────────── */
+.search {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: 14px;
+  background: #fff;
+}
+.search:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: transparent;
+}
+
+/* ── Table ───────────────────────────────────────────────────────── */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 14px;
+}
+.table thead th {
+  text-align: left;
+  padding: 12px 14px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--line);
+  background: var(--accent-soft);
+}
+.row td {
+  padding: 13px 14px;
+  border-bottom: 1px solid var(--line);
+}
+.row {
+  cursor: pointer;
+  transition: background 0.12s ease;
+}
+.row:hover { background: #f6f2ec; }
+.row-open { background: #f6f2ec; }
+
+.mono {
+  font-family: "Cascadia Code", "Consolas", monospace;
+  font-size: 13px;
+  color: var(--accent);
+}
+.name { font-weight: 600; }
+
+/* ── Deadline badge ──────────────────────────────────────────────── */
+.deadline small {
+  display: block;
+  color: var(--ink-soft);
+  font-size: 11px;
+}
+.deadline.soon small { color: var(--accent); font-weight: 600; }
+.deadline.overdue,
+.deadline.overdue small {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.chevron {
+  color: var(--ink-soft);
+  width: 24px;
+  text-align: center;
+}
+
+/* ── Detail expand ───────────────────────────────────────────────── */
+.detail-row td {
+  padding: 0;
+  border-bottom: 1px solid var(--line);
+  background: var(--accent-soft);
+}
+.detail {
+  display: flex;
+  gap: 32px;
+  padding: 18px 20px;
+  flex-wrap: wrap;
+}
+.detail-block { flex: 1 1 320px; }
+.price-block { flex: 0 0 auto; }
+.detail-label {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  margin-bottom: 4px;
+}
+.detail p { margin: 0; line-height: 1.5; }
+.price {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.empty {
+  padding: 28px;
+  text-align: center;
+  color: var(--ink-soft);
+}
+
+/* ── Form ────────────────────────────────────────────────────────── */
+.form {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+  margin-bottom: 18px;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+.form label.full { grid-column: 1 / -1; }
+.form input,
+.form textarea {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: 400;
+  color: var(--ink);
+}
+.form input:focus,
+.form textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: transparent;
+}
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────── */
+@media (max-width: 720px) {
+  .table thead { display: none; }
+  .row td:nth-child(2) { display: none; }
+}
