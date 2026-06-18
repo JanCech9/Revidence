@@ -48,7 +48,7 @@ export function OrderRow({ order, expanded, onToggle, onAddTag, onRemoveTag }) {
             <div className="detail">
               <div className="detail-block">
                 <span className="detail-label">Popis</span>
-                <p>{order.popis}</p>
+                <p className="popis">{order.popis}</p>
               </div>
               <div className="detail-block price-block">
                 <span className="detail-label">Cena</span>

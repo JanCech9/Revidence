@@ -163,6 +163,10 @@ body {
   margin-bottom: 4px;
 }
 .detail p { margin: 0; line-height: 1.5; }
+.popis {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
 .price {
   font-size: 20px;
   font-weight: 700;
