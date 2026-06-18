@@ -67,7 +67,6 @@ export function NewOrderForm({ onAdd, onCancel }) {
         <label>
           Cena (Kč)
           <input
-            type="number"
             value={form.cena}
             onChange={set("cena")}
             placeholder="50000"
