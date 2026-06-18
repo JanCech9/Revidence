@@ -13,6 +13,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  color-scheme: light;
 }
 
 /* ── Layout ─────────────────────────────────────────────────────── */
@@ -210,6 +211,7 @@ body {
   font-family: inherit;
   font-weight: 400;
   color: var(--ink);
+  background: #fff;
 }
 .form input:focus,
 .form textarea:focus {
