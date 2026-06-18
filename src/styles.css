@@ -220,6 +220,106 @@ body {
   margin-top: 16px;
 }
 
+/* ── Tags ────────────────────────────────────────────────────────── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  line-height: 1;
+  padding: 4px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* mini chips shown next to the zakázka name */
+.row-tags {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.tag-mini {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* filter bar */
+.tag-filter {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.tag-filter-label {
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-right: 2px;
+}
+.tag-toggle {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink-soft);
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+}
+.tag-toggle:hover { border-color: var(--accent); color: var(--accent); }
+.tag-toggle.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.tag-clear {
+  border: none;
+  background: transparent;
+  color: var(--danger);
+  font-size: 12px;
+  cursor: pointer;
+  padding: 4px 6px;
+}
+
+/* editable tag input in the detail panel */
+.detail-tags { margin-top: 14px; }
+.tag-input {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+}
+.tag-removable {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+  padding-right: 4px;
+}
+.tag-x {
+  border: none;
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  padding: 0 2px;
+  border-radius: 50%;
+}
+.tag-x:hover { background: rgba(138, 90, 43, 0.18); }
+.tag-field {
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  font-family: inherit;
+  color: var(--ink);
+  padding: 4px 2px;
+  min-width: 110px;
+  flex: 1;
+}
+.tag-field:focus { outline: none; }
+
 /* ── Responsive ──────────────────────────────────────────────────── */
 @media (max-width: 720px) {
   .table thead { display: none; }

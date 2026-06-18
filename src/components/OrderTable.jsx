@@ -1,6 +1,6 @@
 import { OrderRow } from "./OrderRow.jsx";
 
-export function OrderTable({ orders, expandedId, onToggle }) {
+export function OrderTable({ orders, expandedId, onToggle, onAddTag, onRemoveTag }) {
   return (
     <table className="table">
       <thead>
@@ -20,6 +20,8 @@ export function OrderTable({ orders, expandedId, onToggle }) {
             order={order}
             expanded={expandedId === order.id}
             onToggle={onToggle}
+            onAddTag={onAddTag}
+            onRemoveTag={onRemoveTag}
           />
         ))}
         {orders.length === 0 && (

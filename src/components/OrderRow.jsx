@@ -1,6 +1,7 @@
 import { formatDate, formatPrice, daysUntil } from "../utils/formatters.js";
+import { TagInput } from "./TagInput.jsx";
 
-export function OrderRow({ order, expanded, onToggle }) {
+export function OrderRow({ order, expanded, onToggle, onAddTag, onRemoveTag }) {
   const days = daysUntil(order.termin);
   const deadlineClass =
     days < 0 ? "deadline overdue" : days <= 7 ? "deadline soon" : "deadline";
@@ -13,7 +14,18 @@ export function OrderRow({ order, expanded, onToggle }) {
       >
         <td className="mono">{order.evCislo}</td>
         <td>{formatDate(order.datumZalozeni)}</td>
-        <td className="name">{order.zakazka}</td>
+        <td className="name">
+          {order.zakazka}
+          {order.tags?.length > 0 && (
+            <span className="row-tags">
+              {order.tags.map((tag) => (
+                <span key={tag} className="tag tag-mini">
+                  {tag}
+                </span>
+              ))}
+            </span>
+          )}
+        </td>
         <td>{order.klient}</td>
         <td>
           <span className={deadlineClass}>
@@ -42,6 +54,14 @@ export function OrderRow({ order, expanded, onToggle }) {
                 <span className="detail-label">Cena</span>
                 <p className="price">{formatPrice(order.cena)}</p>
               </div>
+            </div>
+            <div className="detail-tags">
+              <span className="detail-label">Štítky</span>
+              <TagInput
+                tags={order.tags ?? []}
+                onAdd={(tag) => onAddTag(order.id, tag)}
+                onRemove={(tag) => onRemoveTag(order.id, tag)}
+              />
             </div>
           </td>
         </tr>

@@ -10,6 +10,7 @@ export const seedData = [
     popis:
       "Kompletní redesign e-shopu na Nuxt 3, napojení na skladový systém přes REST API, migrace produktového katalogu (cca 450 položek).",
     cena: 185000,
+    tags: ["frontend", "e-shop", "priorita"],
   },
   {
     id: 2,
@@ -21,6 +22,7 @@ export const seedData = [
     popis:
       "Webová aplikace pro evidenci docházky 80 zaměstnanců. Backend C# / .NET 8, frontend Vue, export do mzdového systému.",
     cena: 240000,
+    tags: ["backend", "C#", "priorita"],
   },
   {
     id: 3,
@@ -32,5 +34,6 @@ export const seedData = [
     popis:
       "Jednoduchý prezentační web s katalogem výrobků, kontaktním formulářem a napojením na Instagram feed.",
     cena: 48000,
+    tags: ["frontend", "web"],
   },
 ];
